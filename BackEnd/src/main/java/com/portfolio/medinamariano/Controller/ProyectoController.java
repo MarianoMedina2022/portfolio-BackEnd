@@ -69,7 +69,7 @@ public class ProyectoController {
             return new ResponseEntity(new Mensaje("Ese proyecto existe"), HttpStatus.BAD_REQUEST);
         }
         
-        Proyecto proyecto = new Proyecto(dtoproy.getNombreP(), dtoproy.getDescripcionP());
+        Proyecto proyecto = new Proyecto(dtoproy.getNombreP(), dtoproy.getDescripcionP(), dtoproy.getImgP());
         sProyecto.save(proyecto);
         return new ResponseEntity(new Mensaje("Proyecto agregado"), HttpStatus.OK);
     }
@@ -89,7 +89,8 @@ public class ProyectoController {
         Proyecto proyecto = sProyecto.getOne(id).get();
         proyecto.setNombreP(dtoproy.getNombreP());
         proyecto.setDescripcionP((dtoproy.getDescripcionP()));
-        
+        proyecto.setImgP(dtoproy.getImgP());
+	
         sProyecto.save(proyecto);
         
         return new ResponseEntity(new Mensaje("Proyecto actualizado"), HttpStatus.OK);

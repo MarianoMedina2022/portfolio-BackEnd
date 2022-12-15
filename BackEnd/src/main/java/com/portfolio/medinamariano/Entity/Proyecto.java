@@ -20,15 +20,17 @@ public class Proyecto {
     private int id;
     private String nombreP;
     private String descripcionP;
+    private String imgP;
    
     
     // Contructor
     public Proyecto() {
     }
 
-    public Proyecto(String nombreP, String descripcionP) {
+    public Proyecto(String nombreP, String descripcionP, String imgP) {
         this.nombreP = nombreP;
         this.descripcionP = descripcionP;
+	this.imgP = imgP;
 	
     }
     
@@ -55,6 +57,14 @@ public class Proyecto {
 
     public void setDescripcionP(String descripcionP) {
         this.descripcionP = descripcionP;
+    }
+    
+    public String getImgP() {
+        return imgP;
+    }
+
+    public void setImgP(String imgP) {
+        this.imgP = imgP;
     }
 
 	
